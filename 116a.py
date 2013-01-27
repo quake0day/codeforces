@@ -1,8 +1,13 @@
-n,k = map(int,raw_input().split())
+n = map(int,raw_input().split())[0]
 table = []
-[table.append(raw_input().split())]
+[table.append(raw_input().split()) for x in xrange(n)]
 total = 0
-for i in xrange(n):
-    if ((int(table[0][i]) >= int(table[0][k-1])) and int(table[0][k-1]) != 0):
-        total = total+1
-print total
+max = 0
+#print table
+for i in table:
+    #print i[0]
+    #print i[1]
+    total = total - int(i[0]) + int(i[1])
+    if total > max:
+        max = total
+print max
